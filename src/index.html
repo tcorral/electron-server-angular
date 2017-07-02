@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="nl_NL">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <title></title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main ng-include="'/partials/main.html'"></main>
+
+    <script type="text/javascript" src="./scripts/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="./scripts/controllers/MainController.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        angular.bootstrap(document.body, ['electron-server-angular']);
+      })
+    </script>
+  </body>
+</html>

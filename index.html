@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+    const remote = require('electron').remote;
+    const port = remote.getGlobal('atradiusport');
+    window.location.href = 'http://localhost:' + port;
+  </script>
+</html>
