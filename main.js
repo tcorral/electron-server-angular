@@ -16,6 +16,9 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
+  let ieTabPath = "/Users/tomascorralcasas/Library/Application\ Support/Google/Chrome/Default/Extensions/hehijbfgiekmjfkfjpbkbammjbdenadd/10.11.7.1_0/";
+  BrowserWindow.addExtension(ieTabPath);
+  console.log(BrowserWindow.getExtensions());
   const startPort = 3000;
   const endPort = 3100;
   const host = '127.0.0.1';
@@ -31,7 +34,7 @@ function createWindow () {
         protocol: 'file:',
         slashes: true
     });
-    const cookie = { url: strUrl, name: 'atradiusport', value: port };
+    const cookie = { url: strUrl, name: 'port', value: port };
     session.defaultSession.cookies.set(cookie, (error) => {
         if (error) {
             return console.error(error);
@@ -40,7 +43,7 @@ function createWindow () {
     // and load the index.html of the app.
     mainWindow.loadURL(strUrl);
 
-    global.atradiusport = port;
+    global.port = port;
 
     // Open the DevTools.
     //  mainWindow.webContents.openDevTools()
